@@ -1,4 +1,4 @@
-@extends('layout.common')
+@extends('layouts.common')
 
 @section('title', 'ホーム')
 @section('keywords', 'ギター,ベース,弦,交換,管理,ツール,サービス,アプリ')
@@ -7,9 +7,9 @@
     <link href="/css/page.css" rel="stylesheet">
 @endsection
 
-@include('layout.head')
+@include('layouts.head')
 
-@include('layout.header')
+@include('layouts.header')
 
 @section('content')
     <p>コンテンツ内容が入ります</p>
@@ -20,4 +20,4 @@
     <script src="/js/page.js"></script>
 @endsection
 
-@include('layout.footer')
+@include('layouts.footer')
