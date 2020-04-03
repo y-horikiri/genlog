@@ -15,7 +15,7 @@ class StringHistoriesTableSeeder extends Seeder
         // データのクリア
         DB::table('string_histories')->truncate();
 
-        $gear = new StringHistory([
+        $history = new StringHistory([
             'user_id' => 1,
             'gear_id' => 1,
             'change_date' => '2020-04-01',
@@ -36,6 +36,29 @@ class StringHistoriesTableSeeder extends Seeder
             'comment' => '最初の交換',
             'is_unknown' => false,
         ]);
-        $gear->save();
+        $history->save();
+
+        $history = new StringHistory([
+            'user_id' => 1,
+            'gear_id' => 1,
+            'change_date' => '2020-04-02',
+            'seq' => 1,
+            'brand' => 'エリクサー',
+            'gauge_1' => 10,
+            'gauge_2' => 13,
+            'gauge_3' => 17,
+            'gauge_4' => 26,
+            'gauge_5' => 36,
+            'gauge_6' => 46,
+            'gauge_7' => null,
+            'gauge_8' => null,
+            'gauge_9' => null,
+            'gauge_10' => null,
+            'gauge_11' => null,
+            'gauge_12' => null,
+            'comment' => '2回目の交換',
+            'is_unknown' => false,
+        ]);
+        $history->save();
     }
 }
