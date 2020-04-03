@@ -18,7 +18,7 @@ class StringHistoriesTableSeeder extends Seeder
         $history = new StringHistory([
             'user_id' => 1,
             'gear_id' => 1,
-            'change_date' => '2020-04-01',
+            'change_date' => '2020-01-01',
             'seq' => 1,
             'brand' => 'ダダリオ',
             'gauge_1' => 10,
@@ -41,7 +41,7 @@ class StringHistoriesTableSeeder extends Seeder
         $history = new StringHistory([
             'user_id' => 1,
             'gear_id' => 1,
-            'change_date' => '2020-04-02',
+            'change_date' => '2020-02-02',
             'seq' => 1,
             'brand' => 'エリクサー',
             'gauge_1' => 10,

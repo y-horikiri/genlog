@@ -19,13 +19,4 @@ class Gear extends Model
         return $this->hasOne('App\Models\GearType');
     }
 
-    public function getPeriod()
-    {
-        $now = new Datetime('now');
-        $diff = $now->diff($this->change_date);
-        $months = $diff->m;
-        $days = $diff->d;
-        return ['months' => $months, 'days' => $days];
-    }
-
 }

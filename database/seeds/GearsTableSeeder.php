@@ -27,7 +27,7 @@ class GearsTableSeeder extends Seeder
 
         $gear = new Gear([
             'user_id' => 1,
-            'name' => 'まぁちん',
+            'name' => 'マーチン',
             'type' => 2,
             'string_count' => 6,
             'icon_id' => 2,
