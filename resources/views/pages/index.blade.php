@@ -37,10 +37,10 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                            <button class="btn btn-primary mx-auto d-block" type="submit" formmethod="get"
-                                                    formaction="/newstring?id={{$gear->id}}">
-                                                弦を交換する
-                                            </button>
+                                        <button class="btn btn-primary mx-auto d-block" type="submit" formmethod="get"
+                                                formaction="/newstring?id={{$gear->id}}">
+                                            弦を交換する
+                                        </button>
                                     </td>
                                 </tr>
                             @endif
@@ -49,6 +49,7 @@
                 </div>
             @endforeach
         </div>
+        <div>{{$gears->links()}}</div>
     </div>
 @endsection
 

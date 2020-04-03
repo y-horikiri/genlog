@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         // TODO セッションのユーザーIDを条件にする
         $gears = Gear::where('user_id', 1)
-            ->get();
+            ->paginate(10);
         $histories = StringHistory::whereHas('Gear', function ($q) {
             return $q->where('user_id', 1);
         })->get();

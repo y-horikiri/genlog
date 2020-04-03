@@ -52,5 +52,7 @@ class GearsTableSeeder extends Seeder
         ]);
         $gear->save();
 
+        factory(Gear::class, 10)->create();
+
     }
 }
