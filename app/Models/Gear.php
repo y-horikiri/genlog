@@ -11,6 +11,7 @@ class Gear extends Model
     {
         return $this->hasMany('App\Models\StringHistory')
             ->orderBy('change_date', 'DESC')
+            ->orderBy('id', 'DESC')
             ;
     }
 

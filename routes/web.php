@@ -17,3 +17,5 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/newstring', 'StringController@index');
 Route::post('/newstring', 'StringController@create');
+
+Route::get('/newstring/complete', 'StringController@complete');

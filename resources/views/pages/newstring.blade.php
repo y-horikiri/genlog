@@ -25,8 +25,11 @@
                 <input type="hidden" name="gear_id" id="gear_id" value="{{$gear->id}}">
                 <input type="hidden" id="gear_type" value="{{$gear->type}}">
                 @isset($gear->stringHistories)
-                <input type="hidden" id="previous_brand" value="{{$gear->stringHistories[0]->brand}}">
+                    <input type="hidden" id="previous_brand" value="{{$gear->stringHistories[0]->brand}}">
                 @endisset
+                @foreach($errors->all() as $error)
+                    <div class="alert alert-danger">{{$error}}</div>
+                @endforeach
                 <table class="table table-bordered">
                     <tr>
                         {{--TODO アイコンをタイプに応じて変更--}}
@@ -36,14 +39,18 @@
                     </tr>
                     <tr>
                         <th>ブランド</th>
-                        <td><div class="form-inline"><input type="text" name="brand" id="brand" class="form-control">
-                            <input type="button" value="前回と同じ" id="same" class="btn btn-info btn-sm m-2"></div></td>
+                        <td>
+                            <div class="form-inline"><input type="text" name="brand" id="brand" class="form-control"
+                                                            value="{{old('brand')}}">
+                                <input type="button" value="前回と同じ" id="same" class="btn btn-info btn-sm m-2"></div>
+                        </td>
                     </tr>
                     <tr>
                         <th>ゲージ</th>
                         <td>
                             @for($i = 1; $i <= $gear->string_count; $i++)
-                                <input type="number" name="gauge_{{$i}}" id="gauge_{{$i}}" class="gauge mb-1">
+                                <input type="text" name="gauge_{{$i}}" id="gauge_{{$i}}" class="gauge mb-1"
+                                       value="{{old('gauge_'.$i)}}">
                                 @if(!($i == $gear->string_count))
                                     -
                                 @endif
@@ -69,11 +76,11 @@
                     </tr>
                     <tr>
                         <th>交換日付</th>
-                        <td><input type="text" name="change_date" id="change_date"></td>
+                        <td><input type="text" name="change_date" id="change_date" value="{{old('change_date')}}"></td>
                     </tr>
                     <tr>
                         <th>コメント</th>
-                        <td><textarea name="comment" id="comment" cols="45" rows="3"></textarea></td>
+                        <td><textarea name="comment" id="comment" cols="45" rows="3">{{old('comment')}}</textarea></td>
                     </tr>
                     <tr>
                         <td colspan="2">
