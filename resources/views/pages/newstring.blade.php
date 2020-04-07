@@ -24,7 +24,7 @@
                 @csrf
                 <input type="hidden" name="gear_id" id="gear_id" value="{{$gear->id}}">
                 <input type="hidden" id="gear_type" value="{{$gear->type}}">
-                @isset($gear->stringHistories)
+                @isset($gear->stringHistories[0])
                     <input type="hidden" id="previous_brand" value="{{$gear->stringHistories[0]->brand}}">
                 @endisset
                 @foreach($errors->all() as $error)

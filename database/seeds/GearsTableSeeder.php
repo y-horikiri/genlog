@@ -44,7 +44,7 @@ class GearsTableSeeder extends Seeder
         $gear->save();
 
         $gear = new Gear([
-            'user_id' => 2,
+            'user_id' => 1,
             'name' => 'プレベっち',
             'type' => 3,
             'string_count' => 4,
@@ -52,7 +52,7 @@ class GearsTableSeeder extends Seeder
         ]);
         $gear->save();
 
-        factory(Gear::class, 10)->create();
+//        factory(Gear::class, 10)->create();
 
     }
 }
