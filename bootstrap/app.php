@@ -41,6 +41,9 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+// 生成されるページネーションをBootstrap4スタイルにする
+Illuminate\Pagination\AbstractPaginator::defaultView("pagination::bootstrap-4");
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

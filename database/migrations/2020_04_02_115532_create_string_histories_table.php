@@ -19,7 +19,7 @@ class CreateStringHistoriesTable extends Migration
             $table->integer('user_id');
             $table->integer('gear_id');
             $table->date('change_date')->nullable();
-            $table->integer('seq')->unsigned();
+            $table->integer('seq')->unsigned()->default(1);
             $table->string('brand')->nullable();
             $table->integer('gauge_1')->unsigned();
             $table->integer('gauge_2')->unsigned()->nullable();

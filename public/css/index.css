@@ -1,7 +1,10 @@
-th.gears {
-    width: 100px;
-}
 
 table.table{
     padding: 0px 10px 0px 10px;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
+/*.overflow-wrap-break {*/
+/*    overflow-wrap: break-word;*/
+/*}*/

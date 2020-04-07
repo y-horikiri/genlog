@@ -14,38 +14,49 @@
 @section('content')
 
     <div class="container">
+        <div>
+            <h1>あなたの楽器一覧</h1>
+        </div>
         <div class="row">
             @foreach($gears as $gear)
                 <div class="col-xs-12 col-lg-6">
-                    <table class="table table-bordered ">
-                        <tr>
-                            <th class="gears"><img src="/img/guitar1.png" alt="アイコン" width="24px" height="24px"></th>
-                            <td><a href="/history?id={{$gear->id}}">{{$gear->name}}</a></td>
-                        </tr>
-                        @foreach($gear->stringHistories as $history)
-                            {{--最新の弦のみを表示--}}
-                            @if($loop->first)
-                                <tr>
-                                    <th class="gears">弦</th>
-                                    <td>{{$history->brand}}：{{$history->gauges}}</td>
-                                </tr>
-                                <tr>
-                                    <th class="gears">張った日</th>
-                                    <td>{{$history->change_date->format('Y年m月d日')}}<br>
-                                        {{$history->getPeriod()->m}}ヶ月と{{$history->getPeriod()->d}}日経過 <br>
-                                        {{$history->indicationMessage}}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <button class="btn btn-primary mx-auto d-block" type="submit" formmethod="get"
-                                                formaction="/newstring?id={{$gear->id}}">
-                                            弦を交換する
-                                        </button>
-                                    </td>
-                                </tr>
-                            @endif
-                        @endforeach
-                    </table>
+                    <form method="get">
+                        <table class="table table-bordered ">
+                            <tr>
+                                {{--TODO アイコンをタイプに応じて変更--}}
+                                <th class="gears"><img src="/img/guitar1.png" alt="アイコン" width="24px" height="24px">
+                                </th>
+                                <td><a href="/history?id={{$gear->id}}">{{$gear->name}}</a></td>
+                            </tr>
+                            @foreach($gear->stringHistories as $history)
+                                {{--最新の弦のみを表示--}}
+                                @if($loop->first)
+                                    <tr>
+                                        <th class="gears">弦</th>
+                                        <td>{{$history->brand}}：{{$history->gauges}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="gears">張った日</th>
+                                        {{--TODO:tdの内容は1つの処理でModelから取得するべき？--}}
+                                        <td>{{$history->change_date->format('Y年m月d日')}}<br>
+                                            {{$history->getPeriod()->m}}ヶ月と{{$history->getPeriod()->d}}日経過 <br>
+                                            {{$history->indicationMessage}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="gears">コメント</th>
+                                        <td class="overflow-wrap-break">{{$history->comment}}</td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                                    <tr>
+                                        <td colspan="2">
+                                            <input type="hidden" name="gear_id" value="{{$gear->id}}">
+                                            <input class="btn btn-primary mx-auto d-block" type="submit"
+                                                   formaction="/newstring" value="弦を交換する">
+                                        </td>
+                                    </tr>
+                        </table>
+                    </form>
                 </div>
             @endforeach
         </div>
