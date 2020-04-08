@@ -4,7 +4,7 @@
 @section('keywords', '')
 @section('description', '')
 @section('pageCss')
-    {{--    <link href="/css/newstring.css" rel="stylesheet">--}}
+    {{--    <link href="/css/newstring.scss" rel="stylesheet">--}}
 @endsection
 
 @include('layouts.head')

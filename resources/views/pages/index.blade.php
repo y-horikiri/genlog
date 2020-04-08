@@ -17,11 +17,16 @@
         <div>
             <h1>あなたの楽器一覧</h1>
         </div>
+        <div>
+            <form action="{{url('/newgear')}}" method="get" class="form-group">
+                <input type="submit" id="new-gear-button" value="新規楽器登録" class="btn btn-primary form-control">
+            </form>
+        </div>
         <div class="row">
             @foreach($gears as $gear)
                 <div class="col-xs-12 col-lg-6">
                     <form method="get">
-                        <table class="table table-bordered ">
+                        <table class="table">
                             <tr>
                                 {{--TODO アイコンをタイプに応じて変更--}}
                                 <th class="gears"><img src="/img/guitar1.png" alt="アイコン" width="24px" height="24px">
@@ -48,13 +53,13 @@
                                     </tr>
                                 @endif
                             @endforeach
-                                    <tr>
-                                        <td colspan="2">
-                                            <input type="hidden" name="gear_id" value="{{$gear->id}}">
-                                            <input class="btn btn-primary mx-auto d-block" type="submit"
-                                                   formaction="/newstring" value="弦を交換する">
-                                        </td>
-                                    </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="hidden" name="gear_id" value="{{$gear->id}}">
+                                    <input class="btn btn-primary mx-auto d-block" type="submit"
+                                           formaction="{{url('/newstring')}}" value="弦を交換する">
+                                </td>
+                            </tr>
                         </table>
                     </form>
                 </div>
