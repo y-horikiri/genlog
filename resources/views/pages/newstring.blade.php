@@ -28,7 +28,13 @@
                     <input type="hidden" id="previous_brand" value="{{$gear->stringHistories[0]->brand}}">
                 @endisset
                 @foreach($errors->all() as $error)
-                    <div class="alert alert-danger">{{$error}}</div>
+                    @if($loop->first)
+                        <div class="alert alert-danger">
+                            @endif
+                            {{$error}}<br>
+                            @if($loop->last)
+                        </div>
+                    @endif
                 @endforeach
                 <table class="table table-bordered">
                     <tr>

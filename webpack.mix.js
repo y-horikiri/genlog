@@ -21,4 +21,5 @@ mix.copy('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/index.scss', 'public/css')
     .sass('resources/sass/newstring.scss', 'public/css')
+    .sass('resources/sass/newgear.scss', 'public/css')
 ;

@@ -1,3 +1,11 @@
+th.gears {
+  width: 100px;
+}
+
+.pagination {
+  justify-content: center;
+}
+
 table.table {
   padding: 0px 10px 0px 10px;
   table-layout: fixed;

@@ -19,3 +19,6 @@ Route::get('/newstring', 'StringController@index');
 Route::post('/newstring', 'StringController@create');
 
 Route::get('/newstring/complete', 'StringController@complete');
+
+Route::get('/newgear', 'GearController@index');
+Route::post('/newgear', 'GearController@create');
