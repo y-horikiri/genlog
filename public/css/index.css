@@ -17,6 +17,23 @@ table.table {
   width: 120px;
 }
 
+table.table.gear-sb-3,
+table.table.gear-black,
+table.table.gear-sb-2,
+table.table.gear-blue,
+table.table.gear-red {
+  color: white;
+}
+
+table.table.gear-sb-3 img,
+table.table.gear-black img,
+table.table.gear-sb-2 img,
+table.table.gear-blue img,
+table.table.gear-red img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
 table.table {
   border-radius: 10px;
   border-spacing: 0;
@@ -32,8 +49,7 @@ table.table td {
 }
 
 table.table.gear-red {
-  overflow: hidden;
-  background-color: #ffc8c8;
+  background-color: #f06464;
 }
 
 table.table.gear-red th,
@@ -42,6 +58,38 @@ table.table.gear-red td {
 }
 
 table.table.gear-blue {
-  background-color: #c8c8ff;
+  background-color: #6464f0;
+}
+
+table.table.gear-blue th,
+table.table.gear-blue td {
+  border-color: white;
+}
+
+table.table.gear-sb-2 {
+  background: radial-gradient(gold, black);
+}
+
+table.table.gear-sb-2 th,
+table.table.gear-sb-2 td {
+  border-color: white;
+}
+
+table.table.gear-black {
+  background-color: #373737;
+}
+
+table.table.gear-black th,
+table.table.gear-black td {
+  border-color: white;
+}
+
+table.table.gear-sb-3 {
+  background: radial-gradient(gold, orange 40%, black);
+}
+
+table.table.gear-sb-3 th,
+table.table.gear-sb-3 td {
+  border-color: white;
 }
 

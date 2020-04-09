@@ -60,19 +60,17 @@ class StringController extends Controller
         $form = $request->all();
         unset($form['_token']);
         unset($form['action']);
+        // TODO セッションからユーザーIDを取得
         $newString->user_id = '1';
         $newString->fill($form)->save();
 
-        // TODO 登録完了ページ（ツイートとトップへのリンク）
-        return redirect()
-            ->action('StringController@complete', ['gear_id' => $request->gear_id]);
+        return redirect()->action('StringController@complete', ['gear_id' => $request->gear_id]);
     }
 
     public function complete(Request $request)
     {
         $gear = Gear::find($request->gear_id);
-        $data = ['gear' => $gear];
 
-        return view('/pages/newstring_complete', $data);
+        return view('/pages/newstring_complete', ['gear' => $gear]);
     }
 }

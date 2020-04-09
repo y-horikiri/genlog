@@ -39,7 +39,7 @@
                 <table class="table table-bordered">
                     <tr>
                         {{--TODO アイコンをタイプに応じて変更--}}
-                        <th class="gears"><img src="/img/guitar1.png" alt="アイコン" width="24px" height="24px">
+                        <th class="gears"><img src="/img/icon{{$gear->icon_id}}.png" alt="アイコン" width="48px" height="48px">
                         </th>
                         <td>{{$gear->name}}</td>
                     </tr>
@@ -107,6 +107,7 @@
 
 @section('pageJs')
     <script src="{{asset('/js/newstring.js')}}" type="module" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
 @endsection
 
 @include('layouts.footer')

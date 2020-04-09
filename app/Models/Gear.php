@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gear extends Model
 {
+    protected $guarded = ['id'];
     //
     public function stringHistories()
     {

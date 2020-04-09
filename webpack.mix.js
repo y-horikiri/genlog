@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 mix.copy('resources/js/app.js', 'public/js')
     .copy('resources/js/bootstrap.js', 'public/js')
-    .copy('resources/js/constants.js', 'public/js')
+    .copy('resources/js/const.js', 'public/js')
     .copy('resources/js/DefGauge.js', 'public/js')
     .copy('resources/js/newgear.js', 'public/js')
     .copy('resources/js/newstring.js', 'public/js')

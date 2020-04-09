@@ -22,3 +22,5 @@ Route::get('/newstring/complete', 'StringController@complete');
 
 Route::get('/newgear', 'GearController@index');
 Route::post('/newgear', 'GearController@create');
+
+Route::get('/newgear/complete', 'GearController@complete');

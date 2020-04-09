@@ -27,9 +27,9 @@
                 <div class="col-xs-12 col-lg-6">
                     <form method="get">
                         <table class="table">
+{{--                        <table class="table gear-{{$gear->color}}">--}}
                             <tr>
-                                {{--TODO アイコンをタイプに応じて変更--}}
-                                <th class="gears"><img src="/img/guitar1.png" alt="アイコン" width="24px" height="24px">
+                                <th class="gears"><img src="/img/icon{{$gear->icon_id}}.png" alt="アイコン" width="48px" height="48px">
                                 </th>
                                 <td><a href="/history?id={{$gear->id}}">{{$gear->name}}</a></td>
                             </tr>

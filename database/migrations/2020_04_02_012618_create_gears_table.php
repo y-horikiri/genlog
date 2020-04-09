@@ -20,6 +20,7 @@ class CreateGearsTable extends Migration
             $table->integer('type');
             $table->integer('string_count');
             $table->integer('icon_id')->nullable();
+            $table->string('color');
             $table->timestamps();
         });
     }

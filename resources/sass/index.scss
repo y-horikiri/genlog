@@ -11,6 +11,13 @@ table.table{
     width: 120px;
 }
 
+%inv-base{
+    color: white;
+    img {
+        filter: invert(1);
+    }
+}
+
 table.table {
     border-radius: 10px;
     border-spacing: 0;
@@ -25,7 +32,8 @@ table.table {
     }
 
     &.gear-red {
-        overflow: hidden;
+        @extend %inv-base;
+
         background-color: $bgRed;
         th, td {
             border-color: white;
@@ -33,6 +41,36 @@ table.table {
     }
 
     &.gear-blue {
+        @extend %inv-base;
         background-color: $bgBlue;
+        th, td {
+            border-color: white;
+        }
+    }
+
+    &.gear-sb-2 {
+        @extend %inv-base;
+        //background: radial-gradient($bgOrange, $bgBlack);
+        background: radial-gradient(gold, black);
+        th, td {
+            border-color: white;
+        }
+    }
+
+    &.gear-black {
+        @extend %inv-base;
+        //background: radial-gradient($bgOrange, $bgBlack);
+        background-color: $bgBlack;
+        th, td {
+            border-color: white;
+        }
+    }
+
+    &.gear-sb-3 {
+        @extend %inv-base;
+        background: radial-gradient(gold, orange 40%, black);
+        th, td {
+            border-color: white;
+        }
     }
 }

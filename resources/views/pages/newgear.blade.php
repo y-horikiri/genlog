@@ -36,18 +36,22 @@
                         <tr>
                             <th class="gears">名前
                             </th>
-                            <td><input type="text" name="name" id="name" class="form-control" style="width: 250px;">
+                            <td><input type="text" name="name" id="name" class="form-control" style="width: 250px;"
+                                       value="{{old('name')}}">
                             </td>
                         </tr>
                         <tr>
                             <th class="gears">種類
                             </th>
                             <td>
-                                <input type="radio" name="type" id="eg" value="eg" class="" checked="checked">
+                                <input type="radio" name="type" id="eg" value="1"
+                                       {{ old('type', '1') == '1' ? 'checked' : ''}}>
                                 <label class="radio-inline" for="eg">エレキギター</label>
-                                <input type="radio" name="type" id="ag" value="ag">
+                                <input type="radio" name="type" id="ag" value="2"
+                                       {{old('type') == '2' ? 'checked' : ''}}>
                                 <label class="radio-inline" for="ag">アコースティックギター</label>
-                                <input type="radio" name="type" id="eb" value="eb">
+                                <input type="radio" name="type" id="eb" value="3"
+                                       {{old('type') == '3' ? 'checked' : ''}}>
                                 <label class="radio-inline" for="eb">エレキベース</label>
                             </td>
                         </tr>
@@ -56,20 +60,13 @@
                             </th>
                             <td>
                                 <div class="selection-group">
-                                    <input id="icon1" type="radio" name="icon" value="1">
-                                    <label for="icon1">
-                                        <img src="/img/guitar1.png" alt="ST" width="48px" height="48px">
-                                    </label>
-
-                                    <input id="icon2" type="radio" name="icon" value="2">
-                                    <label for="icon2">
-                                        <img src="/img/guitar2.png" alt="AG" width="48px" height="48px">
-                                    </label>
-
-                                    <input id="icon3" type="radio" name="icon" value="3">
-                                    <label for="icon3">
-                                        <img src="/img/guitar3.png" alt="EB" width="48px" height="48px">
-                                    </label>
+                                    @foreach(config('const.GEAR_ICON') as $key => $value)
+                                        <input id="icon{{$key}}" type="radio" name="icon_id" value="{{$key}}"
+                                            {{old('icon_id') == $key ? 'checked' : ''}}>
+                                        <label for="icon{{$key}}">
+                                            <img src="img/icon{{$key}}.png" alt="{{$value}}" width="48px" height="48px">
+                                        </label>
+                                    @endforeach
                                 </div>
                             </td>
                         </tr>
@@ -78,30 +75,13 @@
                             </th>
                             <td>
                                 <div class="selection-group">
-                                    <input id="black" type="radio" name="color" value="1">
-                                    <label for="black">
-                                        <div class="color-sample black"></div>
-                                    </label>
-
-                                    <input id="white" type="radio" name="color" value="2">
-                                    <label for="white">
-                                        <div class="color-sample white"></div>
-                                    </label>
-
-                                    <input id="red" type="radio" name="color" value="6">
-                                    <label for="red">
-                                        <div class="color-sample red"></div>
-                                    </label>
-
-                                    <input id="blue" type="radio" name="color" value="7">
-                                    <label for="blue">
-                                        <div class="color-sample blue"></div>
-                                    </label>
-
-                                    <input id="green" type="radio" name="color" value="8">
-                                    <label for="green">
-                                        <div class="color-sample green"></div>
-                                    </label>
+                                    @foreach(config('const.GEAR_COLORS') as $key => $value)
+                                        <input id="{{$value}}" type="radio" name="color" value="{{$value}}"
+                                            {{old('color') == $value ? 'checked' : ''}}>
+                                        <label for="{{$value}}">
+                                            <div class="color-sample {{$value}}"></div>
+                                        </label>
+                                    @endforeach
                                 </div>
                             </td>
                         </tr>
@@ -110,7 +90,7 @@
                             </th>
                             <td>
                                 <input type="number" name="string_count" id="string_count" class="form-control"
-                                       style="width: 60px;">
+                                       style="width: 60px;" value="{{old('string_count')}}">
                             </td>
                         </tr>
                         <tr>

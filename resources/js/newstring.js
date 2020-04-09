@@ -1,4 +1,4 @@
-import {DEF_GAUGES} from "./constants.js";
+import {DEF_GAUGES} from "./const.js";
 import {padLeft} from "./util.js";
 /* globals Pikaday */
 "use strict";
