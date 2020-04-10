@@ -18,7 +18,7 @@
             <h1>あなたの楽器一覧</h1>
         </div>
         <div>
-            <form action="{{url('/newgear')}}" method="get" class="form-group">
+            <form action="{{url('/gear/new')}}" method="get" class="form-group">
                 <input type="submit" id="new-gear-button" value="新規楽器登録" class="btn btn-primary form-control">
             </form>
         </div>
@@ -29,9 +29,9 @@
                         <table class="table">
 {{--                        <table class="table gear-{{$gear->color}}">--}}
                             <tr>
-                                <th class="gears"><img src="/img/icon{{$gear->icon_id}}.png" alt="アイコン" width="48px" height="48px">
+                                <th class="gears"><img src="{{asset("/img/icon$gear->icon_id.png")}}" alt="アイコン" width="48px" height="48px">
                                 </th>
-                                <td><a href="/history?id={{$gear->id}}">{{$gear->name}}</a></td>
+                                <td><a href="/gear/{{$gear->id}}">{{$gear->name}}</a></td>
                             </tr>
                             @foreach($gear->stringHistories as $history)
                                 {{--最新の弦のみを表示--}}

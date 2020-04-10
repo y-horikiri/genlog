@@ -4,13 +4,11 @@
   display: none;
 }
 
-/* 画像部分に余白を持たせる */
-
 label img {
   margin: 3px;
 }
 
-/* 選択されたラジオボタンの画像の背景をオレンジ色に変える */
+/* 選択されたラジオボタンの画像に枠をつける */
 
 .selection-group input[type=radio]:checked + label img,
 .selection-group input[type=radio]:checked + label div {

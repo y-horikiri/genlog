@@ -18,7 +18,7 @@ class Gear extends Model
 
     public function gearType()
     {
-        return $this->hasOne('App\Models\GearType');
+        return $this->hasOne('App\Models\GearType','id', 'type');
     }
 
 }
