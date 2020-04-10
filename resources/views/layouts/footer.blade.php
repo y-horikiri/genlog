@@ -1,7 +1,7 @@
 @section('footer')
 
     <footer>
-        <div class="footer bg-dark d-flex align-items-end">
+        <div class="footer bg-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 footer-about">
