@@ -4,16 +4,12 @@
     @yield('head')
 </head>
 <body>
-@yield('header')
-<div class="contents">
-    <div class="main">
+<div id="wrapper">
+    @yield('header')
+    <div class="contents">
         @yield('content')
     </div>
-    <div class="sub">
-        @yield('sub')
-        @yield('pageSub')
-    </div>
-</div>
 @yield('footer')
+</div>
 </body>
 </html>

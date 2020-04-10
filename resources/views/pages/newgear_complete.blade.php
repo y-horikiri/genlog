@@ -14,7 +14,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="alert alert-info">
                     新しい楽器が登録されました！
                 </div>

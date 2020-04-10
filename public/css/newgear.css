@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-th.gears {
-  width: 100px;
-}
-
-.pagination {
-  justify-content: center;
-}
-
 .selection-group input[type=radio] {
   display: none;
 }

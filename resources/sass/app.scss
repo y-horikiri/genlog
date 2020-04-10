@@ -1,15 +1,4 @@
-
-// 楽器の背景色
-$bgRed: rgb(240, 100, 100);
-$bgBlue: rgb(100, 100, 240);
-$bgGreen: rgb(200, 255, 200);
-$bgYellow: rgb(255, 255, 200);
-$bgPurple: rgb(255, 200, 255);
-$bgOrange: rgb(255, 223, 200);
-$bgBrown: rgb(200, 166, 138);
-$bgBlack: #373737;
-$bgWhite: white;
-
+@import "const";
 
 th.gears {
     width: 100px;
@@ -19,4 +8,71 @@ th.gears {
     justify-content: center;
 }
 
+#wrapper{
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 300px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 
+    @media (max-width: $breakpoint-md) {
+        padding-bottom: 500px;/*←footerの高さ*/
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* AZMINDからコピペ */
+
+.footer {
+    padding: 30px 0;
+    margin-top: 30px;
+    text-align: left;
+    color: #aaa;
+}
+
+.footer h3 {
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.footer-about img.logo-footer {
+    max-width: 300px;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.footer-about p a {
+    border: 0;
+}
+
+.footer-about p a:hover, .footer-about p a:focus {
+    border: 0;
+}
+
+.footer-links a {
+    color: #aaa;
+    border: 0;
+}
+
+.footer-links a:hover, .footer-links a:focus {
+    color: #fff;
+}
+
+.footer-copyright {
+    padding-top: 5px;
+}
+
+.footer-copyright a {
+    color: #fff;
+    border: 0;
+}
+
+.footer-copyright a:hover, .footer-copyright a:focus {
+    color: #aaa;
+    border: 0;
+}
