@@ -18,7 +18,7 @@
             <h1>あなたの楽器一覧</h1>
         </div>
         <div>
-            <form action="{{url('/gear/new')}}" method="get" class="form-group">
+            <form action="{{url('/gears/new')}}" method="get" class="form-group">
                 <input type="submit" id="new-gear-button" value="新規楽器登録" class="btn btn-primary form-control">
             </form>
         </div>
@@ -31,9 +31,9 @@
                             <tr>
                                 <th class="gears"><img src="{{asset("/img/icon$gear->icon_id.png")}}" alt="アイコン" width="48px" height="48px">
                                 </th>
-                                <td><a href="/gear/{{$gear->id}}">{{$gear->name}}</a></td>
+                                <td><a href="/gears/{{$gear->id}}">{{$gear->name}}</a></td>
                             </tr>
-                            @foreach($gear->stringHistories as $history)
+                            @forelse($gear->stringHistories as $history)
                                 {{--最新の弦のみを表示--}}
                                 @if($loop->first)
                                     <tr>
@@ -44,15 +44,20 @@
                                         <th class="gears">張った日</th>
                                         {{--TODO:tdの内容は1つの処理でModelから取得するべき？--}}
                                         <td>{{$history->change_date->format('Y年m月d日')}}<br>
-                                            {{$history->getPeriod()->m}}ヶ月と{{$history->getPeriod()->d}}日経過 <br>
-                                            {{$history->indicationMessage}}</td>
+                                            <strong class="text-danger">{{$history->getPeriod()->m}}</strong>ヶ月と<strong class="text-danger">{{$history->getPeriod()->d}}</strong>日経過</td>
                                     </tr>
                                     <tr>
                                         <th class="gears">コメント</th>
                                         <td class="overflow-wrap-break">{{$history->comment}}</td>
                                     </tr>
                                 @endif
-                            @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="2">
+                                        まだ弦が登録されていません！
+                                    </td>
+                                </tr>
+                            @endforelse
                             <tr>
                                 <td colspan="2">
                                     <input type="hidden" name="gear_id" value="{{$gear->id}}">

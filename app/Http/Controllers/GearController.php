@@ -108,11 +108,9 @@ class GearController extends Controller
      */
     public function update(Request $request, $id)
     {
-        global $rules, $messages;
-
         // キャンセルボタンが押された場合、何もせず詳細画面に戻る
         if ($request->get('action') === 'キャンセル') {
-            return redirect("gear/$id");
+            return redirect("gears/$id");
         }
 
         // バリデーション
@@ -132,7 +130,7 @@ class GearController extends Controller
         $newGear->user_id = '1';
         $newGear->fill($form)->save();
 
-        return redirect("gear/$id");
+        return redirect("gears/$id");
     }
 
     /** 削除処理実施

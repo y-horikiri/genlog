@@ -20,14 +20,14 @@ Route::post('/newstring', 'StringController@create');
 
 Route::get('/newstring/complete', 'StringController@complete');
 
-Route::get('/gear/new', 'GearController@index');
-Route::post('/gear/new', 'GearController@create');
+Route::get('/gears/new', 'GearController@index');
+Route::post('/gears/new', 'GearController@create');
 
-Route::get('/gear/new/complete', 'GearController@complete');
+Route::get('/gears/new/complete', 'GearController@complete');
 
-Route::get('/gear/{id}', 'GearController@show');
+Route::get('/gears/{id}', 'GearController@show');
 //Route::post('/gear/{id}', 'GearController@post');
 
-Route::get('/gear/delete/{id}', 'GearController@destroy');
-Route::get('/gear/edit/{id}', 'GearController@edit');
-Route::put('/gear/{id}', 'GearController@update');
+Route::get('/gears/delete/{id}', 'GearController@destroy');
+Route::get('/gears/edit/{id}', 'GearController@edit');
+Route::put('/gears/{id}', 'GearController@update');

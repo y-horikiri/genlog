@@ -21,7 +21,7 @@
                         楽器編集
                     </h1>
                 </div>
-                <form action="{{url("gear/$gear->id")}}" method="post">
+                <form action="{{url("gears/$gear->id")}}" method="post">
                     @method('put')
                     @csrf
                     @foreach($errors->all() as $error)

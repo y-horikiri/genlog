@@ -56,6 +56,16 @@ class GearsTableSeeder extends Seeder
         ]);
         $gear->save();
 
+        $gear = new Gear([
+            'user_id' => 1,
+            'name' => 'Stingray',
+            'type' => 3,
+            'string_count' => 4,
+            'icon_id' => 21,
+            'color' => 'white',
+        ]);
+        $gear->save();
+
 //        factory(Gear::class, 10)->create();
 
     }

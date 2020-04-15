@@ -71,9 +71,9 @@
                             <div class="row justify-content-center">
                                 <input type="hidden" id="id" value="{{$gear->id}}">
                                 <div>
-                                    <a href="{{url("gear/edit/$gear->id")}}">
+                                    <a href="{{url("gears/edit/$gear->id")}}">
                                         <input class="btn btn-primary" type="button" id="edit-button" value="編集"></a>
-                                    <a href="{{url("gear/delete/$gear->id")}}">
+                                    <a href="{{url("gears/delete/$gear->id")}}">
                                         <input class="btn btn-danger" type="button" id="delete-button" value="削除"></a>
                                 </div>
                             </div>
