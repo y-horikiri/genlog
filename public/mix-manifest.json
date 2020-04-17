@@ -1,0 +1,14 @@
+{
+    "/css/app.css": "/css/app.css",
+    "/css/index.css": "/css/index.css",
+    "/css/newstring.css": "/css/newstring.css",
+    "/css/gear.css": "/css/gear.css",
+    "/js/app.js": "/js/app.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/const.js": "/js/const.js",
+    "/js/DefGauge.js": "/js/DefGauge.js",
+    "/js/detail.js": "/js/detail.js",
+    "/js/newgear.js": "/js/newgear.js",
+    "/js/newstring.js": "/js/newstring.js",
+    "/js/util.js": "/js/util.js"
+}

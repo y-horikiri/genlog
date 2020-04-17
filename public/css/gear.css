@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.selection-group input[type=radio] {
+  display: none;
+}
+
+label img {
+  margin: 3px;
+}
+
+/* 選択されたラジオボタンの画像に枠をつける */
+
+.selection-group input[type=radio]:checked + label img,
+.selection-group input[type=radio]:checked + label div {
+  border: solid 2px cornflowerblue;
+}
+
+.color-sample {
+  border-radius: 3px;
+  width: 50px;
+  height: 50px;
+}
+
+.color-sample.black {
+  background-color: #373737;
+}
+
+.color-sample.white {
+  background-color: white;
+}
+
+.color-sample.red {
+  background-color: #f06464;
+}
+
+.color-sample.blue {
+  background-color: #6464f0;
+}
+
+.color-sample.green {
+  background-color: #c8ffc8;
+}
+
+.color-sample.yellow {
+  background-color: #ffffc8;
+}
+
+.color-sample.purple {
+  background-color: #ffc8ff;
+}
+
+.color-sample.brown {
+  background-color: #c8a68a;
+}
+
+.color-sample.sb-2 {
+  background: radial-gradient(gold, black);
+}
+
+.color-sample.sb-3 {
+  background: radial-gradient(gold, orange 40%, black);
+}
+
+.color-sample.sb-cherry {
+  background: radial-gradient(gold, crimson);
+}
+

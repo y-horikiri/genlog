@@ -1,0 +1,87 @@
+table.table {
+  padding: 0px 10px 0px 10px;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+#new-gear-button {
+  width: 120px;
+}
+
+table.table.gear-sb-3,
+table.table.gear-black,
+table.table.gear-sb-2,
+table.table.gear-blue,
+table.table.gear-red {
+  color: white;
+}
+
+table.table.gear-sb-3 img,
+table.table.gear-black img,
+table.table.gear-sb-2 img,
+table.table.gear-blue img,
+table.table.gear-red img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+table.table {
+  border-radius: 10px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.table th,
+table.table td {
+  border-style: solid;
+  border-color: #dedede;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+table.table.gear-red {
+  background-color: #f06464;
+}
+
+table.table.gear-red th,
+table.table.gear-red td {
+  border-color: white;
+}
+
+table.table.gear-blue {
+  background-color: #6464f0;
+}
+
+table.table.gear-blue th,
+table.table.gear-blue td {
+  border-color: white;
+}
+
+table.table.gear-sb-2 {
+  background: radial-gradient(gold, black);
+}
+
+table.table.gear-sb-2 th,
+table.table.gear-sb-2 td {
+  border-color: white;
+}
+
+table.table.gear-black {
+  background-color: #373737;
+}
+
+table.table.gear-black th,
+table.table.gear-black td {
+  border-color: white;
+}
+
+table.table.gear-sb-3 {
+  background: radial-gradient(gold, orange 40%, black);
+}
+
+table.table.gear-sb-3 th,
+table.table.gear-sb-3 td {
+  border-color: white;
+}
+

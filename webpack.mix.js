@@ -11,5 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.copy('resources/js/app.js', 'public/js')
+    .copy('resources/js/bootstrap.js', 'public/js')
+    .copy('resources/js/const.js', 'public/js')
+    .copy('resources/js/DefGauge.js', 'public/js')
+    .copy('resources/js/detail.js', 'public/js')
+    .copy('resources/js/newgear.js', 'public/js')
+    .copy('resources/js/newstring.js', 'public/js')
+    .copy('resources/js/util.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/index.scss', 'public/css')
+    .sass('resources/sass/newstring.scss', 'public/css')
+    .sass('resources/sass/gear.scss', 'public/css')
+;

@@ -1,0 +1,76 @@
+@import "const";
+
+table.table{
+    padding: 0px 10px 0px 10px;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+#new-gear-button{
+    width: 120px;
+}
+
+%inv-base{
+    color: white;
+    img {
+        filter: invert(1);
+    }
+}
+
+table.table {
+    border-radius: 10px;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    th, td {
+        border-style: solid;
+        border-color: rgba(222, 222, 222, 1);
+        border-width: 2px;
+        border-radius: 5px;
+
+    }
+
+    &.gear-red {
+        @extend %inv-base;
+
+        background-color: $bgRed;
+        th, td {
+            border-color: white;
+        }
+    }
+
+    &.gear-blue {
+        @extend %inv-base;
+        background-color: $bgBlue;
+        th, td {
+            border-color: white;
+        }
+    }
+
+    &.gear-sb-2 {
+        @extend %inv-base;
+        //background: radial-gradient($bgOrange, $bgBlack);
+        background: radial-gradient(gold, black);
+        th, td {
+            border-color: white;
+        }
+    }
+
+    &.gear-black {
+        @extend %inv-base;
+        //background: radial-gradient($bgOrange, $bgBlack);
+        background-color: $bgBlack;
+        th, td {
+            border-color: white;
+        }
+    }
+
+    &.gear-sb-3 {
+        @extend %inv-base;
+        background: radial-gradient(gold, orange 40%, black);
+        th, td {
+            border-color: white;
+        }
+    }
+}
