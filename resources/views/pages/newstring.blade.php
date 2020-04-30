@@ -38,7 +38,6 @@
                 @endforeach
                 <table class="table table-bordered">
                     <tr>
-                        {{--TODO アイコンをタイプに応じて変更--}}
                         <th class="gears"><img src="/img/icon{{$gear->icon_id}}.png" alt="アイコン" width="48px" height="48px">
                         </th>
                         <td>{{$gear->name}}</td>
@@ -86,7 +85,7 @@
                     </tr>
                     <tr>
                         <th>コメント</th>
-                        <td><textarea name="comment" id="comment" cols="45" rows="3">{{old('comment')}}</textarea></td>
+                        <td><textarea name="comment" id="comment" rows="3">{{old('comment')}}</textarea></td>
                     </tr>
                     <tr>
                         <td colspan="2">

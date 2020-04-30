@@ -13,21 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')
+    ->name('index');
 
-Route::get('/newstring', 'StringController@index');
-Route::post('/newstring', 'StringController@create');
+Route::get('/newstring', 'StringController@index')
+    ->middleware('auth');
+Route::post('/newstring', 'StringController@create')
+    ->middleware('auth');
 
-Route::get('/newstring/complete', 'StringController@complete');
+Route::get('/newstring/complete', 'StringController@complete')
+    ->middleware('auth');
 
-Route::get('/gears/new', 'GearController@index');
-Route::post('/gears/new', 'GearController@create');
+Route::get('/gears/new', 'GearController@index')
+    ->middleware('auth');
+Route::post('/gears/new', 'GearController@create')
+    ->middleware('auth');
 
-Route::get('/gears/new/complete', 'GearController@complete');
+Route::get('/gears/new/complete', 'GearController@complete')
+    ->middleware('auth');
 
-Route::get('/gears/{id}', 'GearController@show');
+Route::get('/gears/{id}', 'GearController@show')
+    ->middleware('auth');
 //Route::post('/gear/{id}', 'GearController@post');
 
-Route::get('/gears/delete/{id}', 'GearController@destroy');
-Route::get('/gears/edit/{id}', 'GearController@edit');
-Route::put('/gears/{id}', 'GearController@update');
+Route::get('/gears/delete/{id}', 'GearController@destroy')
+    ->middleware('auth');
+Route::get('/gears/edit/{id}', 'GearController@edit')
+    ->middleware('auth');
+Route::put('/gears/{id}', 'GearController@update')
+    ->middleware('auth');
+
+// ログインURL
+Route::get('auth/twitter', 'TwitterController@redirectToProvider');
+// コールバックURL
+Route::get('auth/twitter/callback', 'TwitterController@handleProviderCallback');
+// ログアウトURL
+Route::get('auth/twitter/logout', 'TwitterController@logout');

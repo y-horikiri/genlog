@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\StringHistory;
 use Illuminate\Http\Request;
 use App\Models\Gear;
+use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Array_;
 
 class HomeController extends Controller
@@ -15,11 +16,10 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        // TODO セッションのユーザーIDを条件にする
-        $gears = Gear::where('user_id', 1)
+        $gears = Gear::where('user_id', Auth::id())
             ->paginate(10);
         $histories = StringHistory::whereHas('Gear', function ($q) {
-            return $q->where('user_id', 1);
+            return $q->where('user_id', Auth::id());
         })->get();
 
         // 交換目安メッセージ
