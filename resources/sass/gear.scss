@@ -1,7 +1,7 @@
 @import "const";
 
 
-.selection-group input[type="radio"] {
+.selection-group input[type=radio] {
     display: none;
 }
 
@@ -13,58 +13,6 @@ label img {
 .selection-group input[type="radio"]:checked + label {
     img, div {
         border: solid 2px cornflowerblue;
-    }
-}
-
-.color-sample {
-    border-radius: 3px;
-    width: 50px;
-    height: 50px;
-
-    &.black {
-        background-color: $bgBlack;
-    }
-
-    &.white {
-        background-color: $bgWhite;
-    }
-
-    &.red {
-        background-color: $bgRed;
-    }
-
-    &.blue {
-        background-color: $bgBlue;
-    }
-
-    &.green {
-        background-color: $bgGreen;
-    }
-
-    &.yellow {
-        background-color: $bgYellow;
-    }
-
-    &.purple {
-        background-color: $bgPurple;
-    }
-
-    &.brown {
-        background-color: $bgBrown;
-    }
-
-    &.sb-2 {
-        //background: radial-gradient($bgOrange, $bgBlack);
-        background: radial-gradient(gold, black);
-    }
-
-    &.sb-3 {
-        background: radial-gradient(gold, orange 40%, black);
-    }
-
-    &.sb-cherry {
-        background: radial-gradient(gold, crimson);
-
     }
 }
 

@@ -4,12 +4,6 @@
         <div class="footer bg-dark">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7 footer-about">
-                        <img src="/img/logo.png" alt="ロゴ" width="300px" height="80px" class="logo-footer">
-                        <p>
-                            げんろぐはギタリスト、ベーシストのための弦交換管理サービスです。
-                        </p>
-                    </div>
                     <div class="col-md-4 footer-links">
                         <div class="row">
                             <div class="col">
@@ -31,7 +25,6 @@
                 </div>
             </div>
         </div>
-
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

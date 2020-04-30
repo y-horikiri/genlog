@@ -28,8 +28,11 @@
                     <form method="get">
                         <table class="table">
 {{--                        <table class="table gear-{{$gear->color}}">--}}
-                            <tr>
-                                <th class="gears"><img src="{{asset("/img/icon$gear->icon_id.png")}}" alt="アイコン" width="48px" height="48px">
+                            <tr class="">
+{{--                            <tr class="gear-{{$gear->color}}">--}}
+                                <th class="gears">
+                                    <div class="color-sample {{$gear->color}}"></div>
+{{--                                    <img src="{{asset("/img/icon$gear->icon_id.png")}}" alt="アイコン" width="48px" height="48px">--}}
                                 </th>
                                 <td><a href="/gears/{{$gear->id}}">{{$gear->name}}</a></td>
                             </tr>

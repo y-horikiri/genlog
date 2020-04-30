@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.navbar {
+  background-color: #b04632;
+}
+
 th.gears {
   width: 100px;
 }
@@ -28,6 +32,57 @@ th.gears {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.color-sample {
+  border-radius: 3px;
+  width: 50px;
+  height: 50px;
+}
+
+.color-sample.black {
+  background-color: #373737;
+}
+
+.color-sample.white {
+  background-color: white;
+  border: #c6c6c6 solid 1px;
+}
+
+.color-sample.red {
+  background-color: #f03a43;
+}
+
+.color-sample.blue {
+  background-color: #4f4cf0;
+}
+
+.color-sample.green {
+  background-color: #35c03e;
+}
+
+.color-sample.yellow {
+  background-color: #fff94f;
+}
+
+.color-sample.purple {
+  background-color: #be5cff;
+}
+
+.color-sample.brown {
+  background-color: #c88450;
+}
+
+.color-sample.sb-2 {
+  background: radial-gradient(gold, black);
+}
+
+.color-sample.sb-3 {
+  background: radial-gradient(gold, orange 40%, black);
+}
+
+.color-sample.sb-cherry {
+  background: radial-gradient(gold, crimson);
 }
 
 /* AZMINDからコピペ */
