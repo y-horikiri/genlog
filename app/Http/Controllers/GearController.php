@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gear;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class GearController extends Controller
@@ -60,8 +61,7 @@ class GearController extends Controller
         $form = $request->all();
         unset($form['_token']);
         unset($form['action']);
-        // TODO セッションからユーザーIDを取得
-        $newGear->user_id = '1';
+        $newGear->user_id = Auth::id();
         $newGear->fill($form)->save();
 
         return redirect()->action('GearController@complete', ['gear_id' => $newGear->id]);
@@ -126,8 +126,7 @@ class GearController extends Controller
         $form = $request->all();
         unset($form['_token']);
         unset($form['action']);
-        // TODO セッションからユーザーIDを取得
-        $newGear->user_id = '1';
+        $newGear->user_id = Auth::id();
         $newGear->fill($form)->save();
 
         return redirect("gears/$id");

@@ -1,5 +1,9 @@
 @import "const";
 
+.navbar {
+    background-color: $themeColor;
+}
+
 th.gears {
     width: 100px;
 }
@@ -8,14 +12,14 @@ th.gears {
     justify-content: center;
 }
 
-#wrapper{
+#wrapper {
     position: relative;
     min-height: 100vh;
-    padding-bottom: 300px;/*←footerの高さ*/
-    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+    padding-bottom: 300px; /*←footerの高さ*/
+    box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
 
     @media (max-width: $breakpoint-md) {
-        padding-bottom: 500px;/*←footerの高さ*/
+        padding-bottom: 500px; /*←footerの高さ*/
     }
 }
 
@@ -23,6 +27,59 @@ th.gears {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+
+.color-sample {
+    border-radius: 3px;
+    width: 50px;
+    height: 50px;
+
+    &.black {
+        background-color: $bgBlack;
+    }
+
+    &.white {
+        background-color: $bgWhite;
+        border: #c6c6c6 solid 1px;
+    }
+
+    &.red {
+        background-color: $bgRed;
+    }
+
+    &.blue {
+        background-color: $bgBlue;
+    }
+
+    &.green {
+        background-color: $bgGreen;
+    }
+
+    &.yellow {
+        background-color: $bgYellow;
+    }
+
+    &.purple {
+        background-color: $bgPurple;
+    }
+
+    &.brown {
+        background-color: $bgBrown;
+    }
+
+    &.sb-2 {
+        background: radial-gradient(gold, black);
+    }
+
+    &.sb-3 {
+        background: radial-gradient(gold, orange 40%, black);
+    }
+
+    &.sb-cherry {
+        background: radial-gradient(gold, crimson);
+
+    }
 }
 
 
@@ -75,4 +132,19 @@ th.gears {
 .footer-copyright a:hover, .footer-copyright a:focus {
     color: #aaa;
     border: 0;
+}
+
+/* YouTube埋め込みのレスポンシブ対応 */
+.movie {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.movie iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 }

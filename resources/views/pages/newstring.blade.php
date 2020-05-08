@@ -38,8 +38,8 @@
                 @endforeach
                 <table class="table table-bordered">
                     <tr>
-                        {{--TODO アイコンをタイプに応じて変更--}}
-                        <th class="gears"><img src="/img/icon{{$gear->icon_id}}.png" alt="アイコン" width="48px" height="48px">
+                        <th class="gears">
+                            <div class="color-sample {{$gear->color}}"></div>
                         </th>
                         <td>{{$gear->name}}</td>
                     </tr>
@@ -54,8 +54,9 @@
                     <tr>
                         <th>ゲージ</th>
                         <td>
+                            <div class="form-inline">
                             @for($i = 1; $i <= $gear->string_count; $i++)
-                                <input type="text" name="gauge_{{$i}}" id="gauge_{{$i}}" class="gauge mb-1"
+                                <input type="text" name="gauge_{{$i}}" id="gauge_{{$i}}" class="gauge form-control"
                                        value="{{old('gauge_'.$i)}}">
                                 @if(!($i == $gear->string_count))
                                     -
@@ -64,29 +65,38 @@
                             <br>
                             @switch($gear->type)
                                 @case("1")
-                                <input type="button" value="09-" id="gauge09" class="gaugebutton btn btn-info btn-sm">
-                                <input type="button" value="10-" id="gauge10" class="gaugebutton btn btn-info btn-sm">
+                                <input type="button" value="09-" id="gauge09" class="gaugebutton btn btn-info btn-sm m-1">
+                                <input type="button" value="10-" id="gauge10" class="gaugebutton btn btn-info btn-sm m-1">
                                 @break
                                 @case("2")
-                                <input type="button" value="10-" id="gauge10" class="gaugebutton btn btn-info btn-sm">
-                                <input type="button" value="11-" id="gauge11" class="gaugebutton btn btn-info btn-sm">
-                                <input type="button" value="12-" id="gauge12" class="gaugebutton btn btn-info btn-sm">
-                                <input type="button" value="13-" id="gauge13" class="gaugebutton btn btn-info btn-sm">
+                                <input type="button" value="10-" id="gauge10" class="gaugebutton btn btn-info btn-sm m-1">
+                                <input type="button" value="11-" id="gauge11" class="gaugebutton btn btn-info btn-sm m-1">
+                                <input type="button" value="12-" id="gauge12" class="gaugebutton btn btn-info btn-sm m-1">
+                                <input type="button" value="13-" id="gauge13" class="gaugebutton btn btn-info btn-sm m-1">
                                 @break
                                 @case("3")
-                                <input type="button" value="040-" id="gauge40" class="gaugebutton btn btn-info btn-sm">
-                                <input type="button" value="045-" id="gauge45" class="gaugebutton btn btn-info btn-sm">
+                                <input type="button" value="040-" id="gauge40" class="gaugebutton btn btn-info btn-sm m-1">
+                                <input type="button" value="045-" id="gauge45" class="gaugebutton btn btn-info btn-sm m-1">
                                 @break
                             @endswitch
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <th>交換日付</th>
-                        <td><input type="text" name="change_date" id="change_date" value="{{old('change_date')}}"></td>
+                        <td>
+                            <div class="form-inline">
+                                <input type="text" name="change_date" id="change_date" class="form-control" value="{{old('change_date')}}">
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <th>コメント</th>
-                        <td><textarea name="comment" id="comment" cols="45" rows="3">{{old('comment')}}</textarea></td>
+                        <td>
+                            <div class="form-inline">
+                                <textarea name="comment" id="comment" rows="3" class="form-control">{{old('comment')}}</textarea>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">

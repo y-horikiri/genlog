@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gear;
 use App\Models\StringHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class StringController extends Controller
@@ -60,8 +61,7 @@ class StringController extends Controller
         $form = $request->all();
         unset($form['_token']);
         unset($form['action']);
-        // TODO セッションからユーザーIDを取得
-        $newString->user_id = '1';
+        $newString->user_id = Auth::id();
         $newString->fill($form)->save();
 
         return redirect()->action('StringController@complete', ['gear_id' => $request->gear_id]);
