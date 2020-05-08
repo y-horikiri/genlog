@@ -45,13 +45,13 @@
                             <p>{{$gear->gearType->name}}</p>
                         </td>
                     </tr>
-                    <tr>
-                        <th class="gears">アイコン
-                        </th>
-                        <td>
-                            <img src="/img/icon{{$gear->icon_id}}.png" alt="アイコン" width="48px" height="48px">
-                        </td>
-                    </tr>
+{{--                    <tr>--}}
+{{--                        <th class="gears">アイコン--}}
+{{--                        </th>--}}
+{{--                        <td>--}}
+{{--                            <img src="/img/icon{{$gear->icon_id}}.png" alt="アイコン" width="48px" height="48px">--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
                     <tr>
                         <th class="gears">色
                         </th>

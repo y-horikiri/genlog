@@ -18,7 +18,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="auth/twitter">
-                            Twitterでログイン/新規登録
+                            Twitterで新規登録/ログイン
                         </a>
                     </li>
                 </ul>

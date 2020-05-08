@@ -13,9 +13,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <p><a class="scroll-link" href="/">ホーム</a></p>
-                                <p><a href="https://twitter.com/Koutei_108">お問い合わせ（作者Twitter）</a></p>
-                                <p><a href="#">プライバシーポリシー</a></p>
-                                <p><a href="#">利用規約</a></p>
+                                <p><a href="https://twitter.com/Koutei_108" target="_blank">お問い合わせ（作者Twitter）</a></p>
+{{--                                <p><a href="#">プライバシーポリシー</a></p>--}}
+{{--                                <p><a href="#">利用規約</a></p>--}}
                             </div>
                         </div>
                     </div>

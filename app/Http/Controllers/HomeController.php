@@ -16,19 +16,23 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $gears = Gear::where('user_id', Auth::id())
-            ->paginate(10);
-        $histories = StringHistory::whereHas('Gear', function ($q) {
-            return $q->where('user_id', Auth::id());
-        })->get();
+        if (Auth::check()) {
+            $gears = Gear::where('user_id', Auth::id())
+                ->paginate(10);
+            $histories = StringHistory::whereHas('Gear', function ($q) {
+                return $q->where('user_id', Auth::id());
+            })->get();
 
-        // 交換目安メッセージ
-        $indication_messages = [];
-        foreach ($histories as $history) {
-            $indication_messages[] = [$history->gear_id => $history->indicationMessage];
+            // 交換目安メッセージ
+            $indication_messages = [];
+            foreach ($histories as $history) {
+                $indication_messages[] = [$history->gear_id => $history->indicationMessage];
+            }
+
+            return view('pages/index', ['gears' => $gears]);
+        } else {
+            // 未ログイン時
+            return view('pages/index_beforeLogin');
         }
-
-        return view('pages/index', ['gears' => $gears]);
-
     }
 }

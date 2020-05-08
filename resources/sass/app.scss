@@ -1,7 +1,7 @@
 @import "const";
 
 .navbar {
-    background-color: #b04632;
+    background-color: $themeColor;
 }
 
 th.gears {
@@ -12,14 +12,14 @@ th.gears {
     justify-content: center;
 }
 
-#wrapper{
+#wrapper {
     position: relative;
     min-height: 100vh;
-    padding-bottom: 300px;/*←footerの高さ*/
-    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+    padding-bottom: 300px; /*←footerの高さ*/
+    box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
 
     @media (max-width: $breakpoint-md) {
-        padding-bottom: 500px;/*←footerの高さ*/
+        padding-bottom: 500px; /*←footerの高さ*/
     }
 }
 
@@ -132,4 +132,19 @@ th.gears {
 .footer-copyright a:hover, .footer-copyright a:focus {
     color: #aaa;
     border: 0;
+}
+
+/* YouTube埋め込みのレスポンシブ対応 */
+.movie {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.movie iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 }
