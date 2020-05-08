@@ -18,4 +18,10 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # HTTPアクセスのみをHTTPSにリダイレクトする
+    # 「RewriteCond %{HTTPS} off」だとリダイレクトループが発生するので注意
+    # 301リダイレクトで旧URLが持っているGoogleからの評価を引き継ぐ
+    RewriteCond %{HTTP:X-Forwarded-Proto} ^http$
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </IfModule>
