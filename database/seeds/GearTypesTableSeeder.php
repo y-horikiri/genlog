@@ -17,25 +17,25 @@ class GearTypesTableSeeder extends Seeder
         // データのクリア
         DB::table('gear_types')->truncate();
 
-        $gearType = new GearType([
+        $gear_type = new GearType([
             'gear_type' => 1,
             'name' => 'エレキギター',
             'default_string_count' => 6,
         ]);
-        $gearType->save();
+        $gear_type->save();
 
-        $gearType = new GearType([
+        $gear_type = new GearType([
             'gear_type' => 2,
             'name' => 'アコースティックギター',
             'default_string_count' => 6,
         ]);
-        $gearType->save();
+        $gear_type->save();
 
-        $gearType = new GearType([
+        $gear_type = new GearType([
             'gear_type' => 1,
             'name' => 'エレキベース',
             'default_string_count' => 4,
         ]);
-        $gearType->save();
+        $gear_type->save();
     }
 }

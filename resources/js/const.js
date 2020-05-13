@@ -1,3 +1,4 @@
+
 import {DefGauge} from "./DefGauge.js";
 
 const gauges1 = new Map([

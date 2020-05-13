@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GearsTableSeeder::class);
         $this->call(GearTypesTableSeeder::class);
         $this->call(StringHistoriesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }

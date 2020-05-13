@@ -23,16 +23,13 @@
             </form>
         </div>
         <div class="row">
-            @foreach($gears as $gear)
+            @forelse($gears as $gear)
                 <div class="col-xs-12 col-lg-6">
                     <form method="get">
                         <table class="table">
-{{--                        <table class="table gear-{{$gear->color}}">--}}
                             <tr class="">
-{{--                            <tr class="gear-{{$gear->color}}">--}}
                                 <th class="gears">
                                     <div class="color-sample {{$gear->color}}"></div>
-{{--                                    <img src="{{asset("/img/icon$gear->icon_id.png")}}" alt="アイコン" width="48px" height="48px">--}}
                                 </th>
                                 <td><a href="/gears/{{$gear->id}}">{{$gear->name}}</a></td>
                             </tr>
@@ -45,16 +42,21 @@
                                     </tr>
                                     <tr>
                                         <th class="gears">張った日</th>
-                                        {{--TODO:tdの内容は1つの処理でModelから取得するべき？--}}
                                         <td>{{$history->change_date->format('Y年m月d日')}}<br>
-                                            <strong class="text-danger">{{$history->getPeriod()->m}}</strong>ヶ月と<strong class="text-danger">{{$history->getPeriod()->d}}</strong>日経過</td>
+                                            @if($history->getPeriod()->y >= 1)
+                                                {{--                                            @formatter:off--}}
+                                                <strong class="text-danger">{{$history->getPeriod()->y}}</strong>年と@endif<strong
+{{--                                                @formatter:on--}}
+class="text-danger">{{$history->getPeriod()->m}}</strong>ヶ月と<strong
+                                                class="text-danger">{{$history->getPeriod()->d}}</strong>日経過
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th class="gears">コメント</th>
-                                        <td class="overflow-wrap-break">{{$history->comment}}</td>
+                                        <td class="overflow-wrap-break">{!!nl2br(e($history->comment))!!}</td>
                                     </tr>
                                 @endif
-                                @empty
+                            @empty
                                 <tr>
                                     <td colspan="2">
                                         まだ弦が登録されていません！
@@ -71,7 +73,13 @@
                         </table>
                     </form>
                 </div>
-            @endforeach
+            @empty
+                <div class="col-12">
+                    <p>楽器が登録されていません。</p>
+                    <p>まずは新規楽器登録ボタンからあなたの楽器を登録しましょう！</p>
+                </div>
+
+            @endforelse
         </div>
         <div>{{$gears->links()}}</div>
     </div>

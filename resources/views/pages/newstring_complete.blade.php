@@ -4,7 +4,6 @@
 @section('keywords', '')
 @section('description', '')
 @section('pageCss')
-    {{--    <link href="/css/newstring.scss" rel="stylesheet">--}}
 @endsection
 
 @include('layouts.head')
@@ -14,14 +13,14 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="alert alert-info col-6">
+            <div class="alert alert-info col-lg-6">
                 新しい弦が登録されました！
             </div>
             <div class="col-12">
                 <div class="twitter">
                     <a href="https://twitter.com/share" class="twitter-share-button"
                        data-text="{{$gear->name}}の弦を{{$gear->StringHistories->first()->brand}}の{{$gear->StringHistories->first()->gauge_1}}-に交換しました！"
-                       data-url="{{url('/')}}}" data-hashtags="げんろぐ" data-show-count="false" data-size="large"
+                       data-url="{{url('/')}}}" data-hashtags="げんログ" data-show-count="false" data-size="large"
                        data-lang="ja">ツイート</a>
                 </div>
                 <div>

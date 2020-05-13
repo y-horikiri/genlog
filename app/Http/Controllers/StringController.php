@@ -31,22 +31,29 @@ class StringController extends Controller
         }
 
         $rules = [
-            'brand' => 'required',
-            'change_date' => 'required|date',
+            'brand' => 'required|max:255',
         ];
         $messages = [
             'brand.required' => 'ブランドを入力してください。',
-            'change_date.required' => '交換日付を入力してください。',
-            'change_date.date' => '交換日付は日付形式で入力してください。',
+            'brand.max' => 'ブランドは255文字以内で入力してください。',
         ];
 
         // 弦の本数分バリデーションルール、メッセージを追加
         for ($i = 1; $i <= 12; $i++) {
             if ($request->has('gauge_' . $i)) {
-                $rules['gauge_' . $i] = 'regex:/^\d{1,3}$/';
-                $messages['gauge_' . $i . '.regex'] = $i . '弦のゲージを入力してください。';
+//                $rules['gauge_' . $i] = 'regex:/^\d{1,3}$/';
+                $rules['gauge_' . $i] = 'required|regex:/^\d+$/|max:3';
+                $messages['gauge_' . $i . '.required'] = $i . '弦のゲージを入力してください。';
+                $messages['gauge_' . $i . '.regex'] = $i . '弦のゲージは数値で入力してください。';
+                $messages['gauge_' . $i . '.max'] = $i . '弦のゲージは3桁以内で入力してください。';
             }
         }
+
+        $rules['change_date'] = 'required|date';
+        $rules['comment'] = 'max:255';
+        $messages['change_date.required'] = '交換日付を入力してください。';
+        $messages['change_date.date'] = '交換日付は日付形式で入力してください。';
+        $messages['comment.max'] = 'コメントは255文字以内で入力してください。';
 
         // バリデーション
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -57,12 +64,12 @@ class StringController extends Controller
         }
 
         // DBに登録
-        $newString = new StringHistory();
+        $new_string = new StringHistory();
         $form = $request->all();
         unset($form['_token']);
         unset($form['action']);
-        $newString->user_id = Auth::id();
-        $newString->fill($form)->save();
+        $new_string->user_id = Auth::id();
+        $new_string->fill($form)->save();
 
         return redirect()->action('StringController@complete', ['gear_id' => $request->gear_id]);
     }

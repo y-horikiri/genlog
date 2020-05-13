@@ -19,18 +19,18 @@ class TwitterController extends Controller
     public function handleProviderCallback()
     {
         try {
-            $twitterUser = Socialite::driver('twitter')->user();
+            $twitter_user = Socialite::driver('twitter')->user();
         } catch (Exception $e) {
             return redirect('auth/twitter');
         }
 
         // ログイン処理
-        $user = User::where('auth_id', $twitterUser->id)->first();
+        $user = User::where('auth_id', $twitter_user->id)->first();
         if (!$user) {
             $user = User::create([
-                'name'=> $twitterUser->getName(),
-                'auth_id' => $twitterUser->getId(),
-                'avatar'=>$twitterUser->getAvatar(),
+                'name'=> $twitter_user->getName(),
+                'auth_id' => $twitter_user->getId(),
+                'avatar'=>$twitter_user->getAvatar(),
             ]);
         }
         Auth::login($user);

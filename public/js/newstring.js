@@ -64,7 +64,7 @@ let picker = new Pikaday({
     //最初に表示された際に選択されている日付
     defaultDate: new Date(),
     //初期化する際にdefaultDateで指定された日付を入力フォームに入力しておくか
-    setDefaultDate: true,
+    setDefaultDate: false,
     //カレンダーで表示する最初の曜日(0: Sunday, 1: Monday, etc)
     firstDay: 0,
     //選択することができる最小の日付

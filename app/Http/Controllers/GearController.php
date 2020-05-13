@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gear;
+use App\Models\StringHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -11,16 +12,15 @@ class GearController extends Controller
 {
 
     private $rules = [
-        'name' => 'required',
+        'name' => 'required|max:255',
         'type' => 'required|integer',
-        'icon_id' => 'required|integer',
         'color' => 'required',
         'string_count' => 'required|integer|between:1,12',
     ];
     private $messages = [
         'name.required' => '名前を入力してください。',
+        'name.max' => '名前は255文字以内で入力してください。',
         'type.required' => '種類を選択してください。',
-        'icon_id.required' => 'アイコンを選択してください。',
         'color.required' => '色を選択してください。',
         'string_count.required' => '弦の本数を入力してください。',
         'string_count.integer' => '弦の本数は整数で入力してください。',
@@ -57,14 +57,14 @@ class GearController extends Controller
         }
 
         // DBに登録
-        $newGear = new Gear();
+        $new_gear = new Gear();
         $form = $request->all();
         unset($form['_token']);
         unset($form['action']);
-        $newGear->user_id = Auth::id();
-        $newGear->fill($form)->save();
+        $new_gear->user_id = Auth::id();
+        $new_gear->fill($form)->save();
 
-        return redirect()->action('GearController@complete', ['gear_id' => $newGear->id]);
+        return redirect()->action('GearController@complete', ['gear_id' => $new_gear->id]);
     }
 
     /**
@@ -122,12 +122,12 @@ class GearController extends Controller
         }
 
         // DBに登録
-        $newGear = Gear::find($id);
+        $gear = Gear::find($id);
         $form = $request->all();
         unset($form['_token']);
         unset($form['action']);
-        $newGear->user_id = Auth::id();
-        $newGear->fill($form)->save();
+        $gear->user_id = Auth::id();
+        $gear->fill($form)->save();
 
         return redirect("gears/$id");
     }
@@ -138,7 +138,13 @@ class GearController extends Controller
      */
     public function destroy($id)
     {
-        Gear::find($id)->delete();
+        $gear =Gear::find($id);
+        // 紐ついている弦交換履歴も削除する
+        foreach ($gear->stringHistories as $history) {
+            $history->delete();
+        }
+        $gear->delete();
+
 
         return redirect('/');
     }

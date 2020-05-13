@@ -21,7 +21,6 @@ class GearsTableSeeder extends Seeder
             'name' => 'ストラト1号',
             'type' => 1,
             'string_count' => 6,
-            'icon_id' => 1,
             'color' => 'blue',
         ]);
         $gear->save();
@@ -31,7 +30,6 @@ class GearsTableSeeder extends Seeder
             'name' => 'マーチン',
             'type' => 2,
             'string_count' => 6,
-            'icon_id' => 11,
             'color' => 'sb-3',
         ]);
         $gear->save();
@@ -41,7 +39,6 @@ class GearsTableSeeder extends Seeder
             'name' => 'strandberg',
             'type' => 1,
             'string_count' => 8,
-            'icon_id' => 2,
             'color' => 'black',
         ]);
         $gear->save();
@@ -51,7 +48,6 @@ class GearsTableSeeder extends Seeder
             'name' => 'プレベっち',
             'type' => 3,
             'string_count' => 4,
-            'icon_id' => 22,
             'color' => 'red',
         ]);
         $gear->save();
@@ -61,7 +57,6 @@ class GearsTableSeeder extends Seeder
             'name' => 'Stingray',
             'type' => 3,
             'string_count' => 4,
-            'icon_id' => 21,
             'color' => 'white',
         ]);
         $gear->save();
