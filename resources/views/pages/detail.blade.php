@@ -99,7 +99,7 @@
                                 <td>{{$history->change_date->format('Y/m/d')}}</td>
                                 <td>{{$history->brand}}</td>
                                 <td>{{$history->gauges}}</td>
-                                <td>{{$history->comment}}</td>
+                                <td>{!!nl2br(e($history->comment))!!}</td>
                             </tr>
                         @endforeach
                     </table>

@@ -86,7 +86,7 @@
                         <th>交換日付</th>
                         <td>
                             <div class="form-inline">
-                                <input type="text" name="change_date" id="change_date" class="form-control" value="{{old('change_date')}}">
+                                <input type="text" name="change_date" id="change_date" class="form-control" value="{{old('change_date', date('Y/m/d'))}}">
                             </div>
                         </td>
                     </tr>

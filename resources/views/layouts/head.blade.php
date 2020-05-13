@@ -1,6 +1,6 @@
 @section('head')
     <meta charset="UTF-8">
-    <title>@yield('title') - げんろぐ</title>
+    <title>@yield('title') - げんログ</title>
     <meta name="description" itemprop="description" content="@yield('description')">
     <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -47,30 +47,30 @@
                             <td>
                                 <input type="radio" name="type" id="eg" value="1"
                                     {{ old('type',$gear->type) == '1' ? 'checked' : ''}}>
-                                <label class="radio-inline" for="eg">エレキギター</label>
+                                <label class="radio-inline" for="eg">エレキギター</label><br>
                                 <input type="radio" name="type" id="ag" value="2"
                                     {{ old('type', $gear->type) == '2' ? 'checked' : ''}}>
-                                <label class="radio-inline" for="ag">アコースティックギター</label>
+                                <label class="radio-inline" for="ag">アコースティックギター</label><br>
                                 <input type="radio" name="type" id="eb" value="3"
                                     {{ old('type', $gear->type) == '3' ? 'checked' : ''}}>
                                 <label class="radio-inline" for="eb">エレキベース</label>
                             </td>
                         </tr>
-                        <tr>
-                            <th class="gears">アイコン
-                            </th>
-                            <td>
-                                <div class="selection-group">
-                                    @foreach(config('const.GEAR_ICON') as $key => $value)
-                                        <input id="icon{{$key}}" type="radio" name="icon_id" value="{{$key}}"
-                                            {{old('icon_id', $gear->icon_id) == $key ? 'checked' : ''}}>
-                                        <label for="icon{{$key}}">
-                                            <img src="{{asset("img/icon$key.png")}}" alt="{{$value}}" width="48px" height="48px">
-                                        </label>
-                                    @endforeach
-                                </div>
-                            </td>
-                        </tr>
+{{--                        <tr>--}}
+{{--                            <th class="gears">アイコン--}}
+{{--                            </th>--}}
+{{--                            <td>--}}
+{{--                                <div class="selection-group">--}}
+{{--                                    @foreach(config('const.GEAR_ICON') as $key => $value)--}}
+{{--                                        <input id="icon{{$key}}" type="radio" name="icon_id" value="{{$key}}"--}}
+{{--                                            {{old('icon_id', $gear->icon_id) == $key ? 'checked' : ''}}>--}}
+{{--                                        <label for="icon{{$key}}">--}}
+{{--                                            <img src="{{asset("img/icon$key.png")}}" alt="{{$value}}" width="48px" height="48px">--}}
+{{--                                        </label>--}}
+{{--                                    @endforeach--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
                         <tr>
                             <th class="gears">色
                             </th>
