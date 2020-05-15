@@ -4,6 +4,10 @@
   background-color: #b04632;
 }
 
+#avatar {
+  border-radius: 5px;
+}
+
 th.gears {
   width: 100px;
 }
@@ -49,28 +53,36 @@ th.gears {
   border: #c6c6c6 solid 1px;
 }
 
+.color-sample.natural {
+  background-color: #f5d561;
+}
+
+.color-sample.wine {
+  background-color: #a20d0b;
+}
+
 .color-sample.red {
-  background-color: #f03a43;
+  background-color: #eb303f;
 }
 
 .color-sample.blue {
-  background-color: #4f4cf0;
+  background-color: #4644c3;
 }
 
 .color-sample.green {
-  background-color: #35c03e;
+  background-color: #30b539;
 }
 
 .color-sample.yellow {
-  background-color: #fff94f;
+  background-color: #eddc00;
 }
 
 .color-sample.purple {
-  background-color: #be5cff;
+  background-color: #8c51c2;
 }
 
 .color-sample.brown {
-  background-color: #c88450;
+  background-color: #8b5b37;
 }
 
 .color-sample.sb-2 {

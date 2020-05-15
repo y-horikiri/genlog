@@ -4,6 +4,10 @@
     background-color: $themeColor;
 }
 
+#avatar{
+    border-radius: 5px;
+}
+
 th.gears {
     width: 100px;
 }
@@ -42,6 +46,14 @@ th.gears {
     &.white {
         background-color: $bgWhite;
         border: #c6c6c6 solid 1px;
+    }
+
+    &.natural {
+        background-color: $bgNatural;
+    }
+
+    &.wine {
+        background-color: $bgWine;
     }
 
     &.red {

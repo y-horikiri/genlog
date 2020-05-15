@@ -41,7 +41,7 @@ table.table td {
 }
 
 table.table tr.gear-red {
-  background-color: #f03a43;
+  background-color: #eb303f;
 }
 
 table.table tr.gear-red th,
@@ -50,7 +50,7 @@ table.table tr.gear-red td {
 }
 
 table.table tr.gear-blue {
-  background-color: #4f4cf0;
+  background-color: #4644c3;
 }
 
 table.table tr.gear-blue th,
