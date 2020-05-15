@@ -7,7 +7,7 @@
                 <div class="dropdown">
                     <a class="" href="#" role="button" id="dropdownMenuLink"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{Auth::user()->avatar }}" alt="" width="30" height="30">
+                        <img src="{{Auth::user()->avatar }}" alt="" width="32" height="32" id="avatar">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                         <span class="dropdown-item-text text-muted">{{Auth::user()->name}}さん</span>

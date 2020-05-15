@@ -1,20 +1,22 @@
 <?php
-return[
-  'GEAR_COLORS'=>[
-      1 => 'black',
-      2 => 'white',
-      3 => 'sb-2',
-      4 => 'sb-3',
-      5 => 'sb-cherry',
-      6 => 'red',
-      7 => 'blue',
-      8 => 'yellow',
-      9 => 'green',
-      10 => 'purple',
-      11 => 'brown',
-  ],
+return [
+    'GEAR_COLORS' => [
+        'black',
+        'white',
+        'natural',
+        'sb-2',
+        'sb-3',
+        'sb-cherry',
+        'red',
+        'blue',
+        'yellow',
+        'green',
+        'purple',
+        'brown',
+        'wine',
+    ],
 
-    'GEAR_ICON'=>[
+    'GEAR_ICON' => [
         1 => 'ストラトキャスター',
         2 => 'テレキャスター',
         3 => 'レスポール',
