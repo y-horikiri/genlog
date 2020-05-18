@@ -49,3 +49,10 @@ Route::get('auth/twitter', 'TwitterController@redirectToProvider');
 Route::get('auth/twitter/callback', 'TwitterController@handleProviderCallback');
 // ログアウトURL
 Route::get('auth/twitter/logout', 'TwitterController@logout');
+
+Route::get('/privacy-policy', function (){
+    return view('pages/privacy_policy');
+});
+Route::get('/terms', function (){
+    return view('pages/terms_of_service');
+});
