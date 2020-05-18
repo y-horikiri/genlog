@@ -1,4 +1,13 @@
 @section('head')
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65255042-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-65255042-3');
+    </script>
     <meta charset="UTF-8">
     <title>@yield('title') - げんログ</title>
     <meta name="description" itemprop="description" content="@yield('description')">
