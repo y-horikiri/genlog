@@ -1,8 +1,6 @@
 @extends('layouts.common')
 
-@section('title', '楽器詳細')
-@section('keywords', '')
-@section('description', '')
+@section('title', '楽器詳細 | げんログ')
 @section('pageCss')
     <link href="/css/gear.css" rel="stylesheet">
 @endsection
