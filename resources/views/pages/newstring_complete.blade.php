@@ -1,8 +1,6 @@
 @extends('layouts.common')
 
-@section('title', '弦登録完了')
-@section('keywords', '')
-@section('description', '')
+@section('title', '弦登録完了 | げんログ')
 @section('pageCss')
 @endsection
 

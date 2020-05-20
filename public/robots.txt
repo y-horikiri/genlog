@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /privacy-policy
+Disallow: /terms
+Disallow: /gears
+Disallow: /newstring

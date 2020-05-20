@@ -1,8 +1,6 @@
 @extends('layouts.common')
 
-@section('title', '利用規約')
-@section('keywords', 'ギター,ベース,弦,交換,管理,ツール,サービス,アプリ')
-@section('description', '弦楽器の弦交換の履歴を管理するWebサービスです。')
+@section('title', '利用規約 | げんログ')
 @section('pageCss')
     <link href="/css/textpage.css" rel="stylesheet">
 @endsection

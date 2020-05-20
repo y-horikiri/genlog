@@ -1,10 +1,9 @@
 @extends('layouts.common')
 
-@section('title', '新規弦登録')
-@section('keywords', '')
-@section('description', '')
+@section('title', '新規弦登録 | げんログ')
 @section('pageCss')
     <link href="/css/newstring.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 @endsection
 
 @include('layouts.head')

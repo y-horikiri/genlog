@@ -1,10 +1,7 @@
 @extends('layouts.common')
 
-@section('title', '楽器登録完了')
-@section('keywords', '')
-@section('description', '')
+@section('title', '楽器登録完了 | げんログ')
 @section('pageCss')
-    {{--    <link href="/css/newgear.css" rel="stylesheet">--}}
 @endsection
 
 @include('layouts.head')
