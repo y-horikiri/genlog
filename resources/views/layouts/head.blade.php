@@ -20,6 +20,8 @@
     <meta property="og:title" content="@yield('title')" />
     <meta property="og:description" content="@yield('description')" />
     <meta property="og:site_name" content="げんログ" />
-{{--    <meta property="og:image" content="" />--}}
+    <meta property="og:image" content="https://www.gen-log.net/ogp.jpg" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:image" content="https://www.gen-log.net/ogp_tw.jpg" />
     @yield('pageCss')
 @endsection
