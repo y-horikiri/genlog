@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <p><a class="scroll-link" href="/">ホーム</a></p>
-                                <p><a href="https://twitter.com/Koutei_108" target="_blank">お問い合わせ（作者Twitter）</a></p>
+                                <p><a href="https://twitter.com/y_horikiri" target="_blank">お問い合わせ（作者Twitter）</a></p>
                                 <p><a href="{{url('/privacy-policy')}}">プライバシーポリシー</a></p>
                                 <p><a href="{{url('/terms')}}">利用規約</a></p>
                             </div>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 footer-copyright">
-                    © 2020 Koutei
+                    © 2020 Y.Horikiri
                 </div>
             </div>
         </div>
